@@ -197,11 +197,15 @@ p <- plot_dat |>
     ggplot(aes(ar, hlutf)) +
     geom_line() +
     geom_point() +
-    scale_x_continuous(breaks = 2018:2021, limits = c(2017.9, 2021.1)) +
-    scale_y_continuous(labels = label_percent(), limits = c(0, 0.2), expand = expansion()) +
+    geom_rangeframe() +
+    scale_x_continuous(breaks = 2018:2021, limits = c(2017.95, 2021.05)) +
+    scale_y_continuous(labels = label_percent(), 
+                       limits = c(0, 0.2), 
+                       breaks = c(range(plot_dat$hlutf), 0, 0.2),
+                       expand = expansion()) +
     scale_colour_brewer(type = "qual", palette = "Set1") +
     coord_cartesian(expand = F) +
-    theme_half_open() +
+    theme_tufte() +
     theme(legend.position = "none",
           plot.margin = margin(t = 5, r = 15, b = 5, l = 5)) +
     labs(x = NULL, y = NULL, fill = NULL,
@@ -390,7 +394,7 @@ p <- plot_dat |>
     scale_x_continuous(breaks = 2014:2021, limits = c(2013.95, 2021.05)) +
     scale_y_continuous(labels = label_percent(), 
                        limits = c(0, 0.2), 
-                       breaks = c(range(plot_dat$hlutf), 0, 0.2)),
+                       breaks = c(range(plot_dat$hlutf), 0, 0.2),
                        expand = expansion()) +
     scale_colour_brewer(type = "qual", palette = "Set1") +
     coord_cartesian(expand = F) +
