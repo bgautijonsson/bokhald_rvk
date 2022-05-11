@@ -969,3 +969,31 @@ ggsave(plot = p, filename = "utgjold_2018_2021_oll_undirsvid.png",
        width = 8, height = 0.6 * 8, scale = 2, bg = "white")
 ```
 
+```{r}
+d |> 
+    filter(
+        ar %in% c(2018, 2021),
+        # samtala1 %in% c("Velferðarsvið",
+        #                 "Þjónustu- og nýsköpunarsvið",
+        #                 "Umhverfis- og skipulagssvið aðalsjóður",
+        #                 "Umhverfis og skipulagssvið eignasjóður",
+        #                 "Skóla- og frístundasvið",
+        #                 "Íþrótta- og tómstundasvið")
+        !samtala1 %in% c("Sameiginlegur kostnaður")
+    ) |> 
+    count(flokkur = samtala0, samtala1, ar, wt = raun) |> 
+    mutate(ar = ifelse(ar == min(ar), "fyrir", "eftir")) |> 
+    pivot_wider(names_from = ar, values_from = n, values_fill = 0) |> 
+    mutate(breyting = eftir - fyrir) |> 
+    drop_na(flokkur) |> 
+    arrange(desc(breyting)) |> 
+    mutate(hlutf = breyting / sum(breyting),
+           cumsum_hlutf = cumsum(hlutf),
+           hlutf = percent(hlutf, accuracy = 0.1),
+           cumsum_hlutf = percent(cumsum_hlutf, accuracy = 0.1)) |> 
+    select("Svið" = samtala1, "Útgjaldaflokkur" = flokkur, 
+           "Aukning á kjörtímabili" = breyting,  "Hlutfall af allri aukningu" = hlutf, "Uppsafnað hlutfall af allri aukningu" = cumsum_hlutf,
+           "Útgjöld 2018" = fyrir, "Útgjöld 2021" = eftir) |> 
+    write_csv("aukning_launautgjold.2018-2021.csv")
+```
+
