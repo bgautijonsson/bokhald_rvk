@@ -593,7 +593,8 @@ p <- d |>
     labs(x = NULL,
          y = NULL,
          title = "Hvert fór aukinn launakostnaður Reykjavíkurborgar frá 2020 til 2021?",
-         subtitle = "Sýnt eftir sviðum borgarinnar")
+         subtitle = "Sýnt eftir sviðum borgarinnar",
+         caption = "Kóði og gögn: https://github.com/bgautijonsson/bokhald_rvk")
 
 p
 
@@ -623,7 +624,8 @@ p <- d |>
     labs(x = NULL,
          y = NULL,
          title = "Hver fór aukinn launakostnaður Reykjavíkurborgar frá 2020 til 2021?",
-         subtitle = "Sýnt fyrir Skóla- og frístundasvið")
+         subtitle = "Sýnt fyrir Skóla- og frístundasvið",
+         caption = "Kóði og gögn: https://github.com/bgautijonsson/bokhald_rvk")
 
 p
 
@@ -653,7 +655,8 @@ p <- d |>
     labs(x = NULL,
          y = NULL,
          title = "Hver fór aukinn launakostnaður Reykjavíkurborgar frá 2020 til 2021?",
-         subtitle = "Sýnt fyrir Velverðarsvið")
+         subtitle = "Sýnt fyrir Velverðarsvið",
+         caption = "Kóði og gögn: https://github.com/bgautijonsson/bokhald_rvk")
 
 p
 
@@ -685,7 +688,8 @@ p <- d |>
     labs(x = NULL,
          y = NULL,
          title = "Hver fór aukinn launakostnaður Reykjavíkurborgar frá 2020 til 2021?",
-         subtitle = "Sýnt fyrir Þjónustu- og nýsköpunarsvið")
+         subtitle = "Sýnt fyrir Þjónustu- og nýsköpunarsvið",
+         caption = "Kóði og gögn: https://github.com/bgautijonsson/bokhald_rvk")
 
 p
 
@@ -730,7 +734,8 @@ p <- d |>
          y = NULL,
          fill = NULL,
          title = "Hvert fór aukinn launakostnaður Reykjavíkurborgar frá 2020 til 2021?",
-         subtitle = "Sýnt fyrir þá 50 undirflokka allra sviða sem sýna mesta aukningu")
+         subtitle = "Sýnt fyrir þá 50 undirflokka allra sviða sem sýna mesta aukningu",
+         caption = "Kóði og gögn: https://github.com/bgautijonsson/bokhald_rvk")
 
 p
 
@@ -762,7 +767,8 @@ p <- d |>
     labs(x = NULL,
          y = NULL,
          title = "Hvert fór aukinn launakostnaður Reykjavíkurborgar frá 2016 til 2021?",
-         subtitle = "Sýnt eftir sviðum borgarinnar")
+         subtitle = "Sýnt eftir sviðum borgarinnar",
+         caption = "Kóði og gögn: https://github.com/bgautijonsson/bokhald_rvk")
 
 p
 
